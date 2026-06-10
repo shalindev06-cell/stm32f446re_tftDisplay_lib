@@ -1,35 +1,22 @@
-# spi_driver_for_adxl345_not_tested_for_stm32
-WIP: SPI peripheral driver for the ADXL345 3-axis accelerometer, targeted for the STM32F446RE. This codebase is currently untested.
-# ADXL345 Accelerometer Driver (Bare-Metal SPI)
+# stm32f446re_game_lib
 
-Hey there! This is a bare-metal C driver for the ADXL345 3-axis accelerometer, written specifically for the **STM32F446RE** using STM32CubeIDE.
+A bare-metal graphics and game library for the STM32F446RE using an ST7789 TFT display.
 
-###  Project Status
-* **Low-Level SPI Peripheral:** Fully tested and verified working on hardware! 
-* **Sensor Logic:** Work in progress. The ADXL345 register configurations and data-reading state machines are drafted but still need to be verified with the physical sensor.
+## Features
 
-### How to Wire It Up
-The SPI1 peripheral pins are mapped out to the sensor as follows:
+- SPI display driver
+- Pixel drawing
+- Horizontal and vertical lines
+- Bresenham line drawing
+- Rectangle drawing
+- Filled rectangles
+- Circle drawing
+- Filled circles
 
-* **PA4** → **CS** (Chip Select - Active Low)
-* **PA5** → **SCK** (Serial Clock)
-* **PA6** → **MISO** (Master In Slave Out / SDO)
-* **PA7** → **MOSI** (Master Out Slave In / SDA)
+## Planned
 
-*Make sure your breakout board is getting a safe, stable 3.3V supply!*
-###  Clock & Speed Configuration
-* **System Clock:** 16 MHz (Running on default HSI, no PLL required).
-* **SPI Baud Rate:** 500 kHz (SPI prescaler set to 32).
-* Uses SPI1 in this code and can be changed to any SPI but also need to change the pins accrding to which SPI module is used 
-* *Note: 500 kHz was chosen intentionally for initial testing. It provides highly reliable signal integrity over breadboard jumper wires while staying well within the ADXL345's 5 MHz maximum limit.*
-
-### What's Left to Do
-- [ ] Connect the physical ADXL345 and verify the `DEVID` (0xE5) register read match.
-- [ ] Finalize data rate and power management configurations (`POWER_CTL`).
-- [ ] Test multi-byte reads to grab the X, Y, and Z axis data streams simultaneously.
-- [ ] Convert the raw two's complement data into human-readable 'g' values.
-
-### Exploring the Code
-If you want to look at the driver architecture, switch over to the `before_testing` branch and check out the `Core/Src` and `Core/Inc` directories. 
-
-This project is open-source under the Apache 2.0 License. Feel free to look around or adapt the SPI layer for your own hardware!
+- Bitmap fonts
+- Triangle primitives
+- Sprite rendering
+- Snake game demo
+- DMA acceleration
