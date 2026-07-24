@@ -1,6 +1,6 @@
 # stm32f446re_game_lib
 
-A lightweight game/graphics library for STM32F446RE and ST7789 displays written in bare-metal C.
+A lightweight graphics library for STM32F446RE and ST7789 displays written in bare-metal C.
 
 ## Features
 
@@ -27,8 +27,9 @@ A lightweight game/graphics library for STM32F446RE and ST7789 displays written 
 
 - STM32F446RE
 - ST7789 TFT Display
-- Bare-metal C (no HAL)
+- Bare-metal C 
 
 ## Status
 
 Work in progress.
+##code is in the branch 
