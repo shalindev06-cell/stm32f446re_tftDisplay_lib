@@ -1,4 +1,4 @@
-# stm32f446re_game_lib
+# stm32f446re_tftDisplay_lib
 
 A lightweight graphics library for STM32F446RE and ST7789 displays written in bare-metal C.
 
